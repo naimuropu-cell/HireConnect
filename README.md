@@ -1,89 +1,359 @@
-# HireConnect — Intelligent Candidate Matching Platform
+# 💼 HireConnect - AI Based Job Matching Platform
 
-HireConnect is a modern full-stack recruitment platform that connects job seekers and employers.
+> A modern AI-inspired recruitment platform that connects job seekers and employers through an intelligent job matching system. Built with React, TypeScript, Express.js, PostgreSQL, and Prisma.
 
-## Features
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Prisma-blue?logo=postgresql)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-- **Authentication**: Register, login, forgot/reset password, OTP + email verification, remember me, change password, JWT + refresh tokens, role-based access (Seeker / Employer / Admin).
-- **Job Seekers**: Professional profile (skills, education, experience, certifications), resume upload, job search with advanced filters, apply/withdraw, save jobs, track applications, notifications.
-- **Employers**: Company registration & profile, job CRUD, applicants management, shortlist / reject / hire, schedule interviews, dashboard analytics & charts.
-- **Admin**: User management, employer approval, job moderation, category & skill management, reports, analytics dashboard.
+---
 
-## Tech Stack
+## 📖 Overview
 
-| Layer      | Technology |
-|------------|------------|
-| Frontend   | React 19, TypeScript, Vite, Tailwind CSS, shadcn-style UI, React Router, TanStack Query, React Hook Form, Zod, Axios |
-| Backend    | Node.js, Express, TypeScript, Prisma ORM, JWT, Bcrypt, Multer, Nodemailer, Socket.io |
-| Database   | PostgreSQL (Supabase) for production, SQLite for local dev |
-| Storage    | Local uploads (Cloudinary-ready) |
+HireConnect is a full-stack recruitment platform designed to simplify the hiring process for both job seekers and employers.
 
-## Project Structure
+The platform enables employers to post jobs, manage candidates, and track hiring activities, while job seekers can create professional profiles, search jobs, and apply online. It features secure authentication, role-based access control, responsive UI, and scalable architecture.
+
+---
+
+# ✨ Key Features
+
+## 👤 Authentication
+
+- User Registration
+- Secure Login
+- JWT Authentication
+- Role-Based Access Control
+- Forgot Password
+- Reset Password
+- Change Password
+- Email Verification
+
+---
+
+## 👨‍💼 Job Seeker Features
+
+- Professional Profile
+- Resume Upload
+- Skills Management
+- Education & Experience
+- Job Search
+- Advanced Filters
+- Save Jobs
+- Apply Jobs
+- Track Application Status
+- Profile Completion
+
+---
+
+## 🏢 Employer Features
+
+- Company Profile
+- Post New Jobs
+- Edit Jobs
+- Delete Jobs
+- View Applicants
+- Shortlist Candidates
+- Reject Candidates
+- Dashboard Analytics
+- Manage Active Jobs
+
+---
+
+## 👑 Admin Features
+
+- Dashboard
+- User Management
+- Employer Management
+- Job Moderation
+- Category Management
+- Skills Management
+- Reports & Analytics
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- TanStack Query
+- Axios
+- React Hook Form
+- Zod
+
+## Backend
+
+- Node.js
+- Express.js
+- TypeScript
+- Prisma ORM
+- JWT Authentication
+- Bcrypt
+- Multer
+- Nodemailer
+- Socket.IO
+
+## Database
+
+- PostgreSQL
+
+---
+
+# 📂 Project Structure
 
 ```
-HireConnect/
-  client/     # React SPA
-  server/     # Express + Prisma API
-  docs/       # Documentation
-  docker-compose.yml
-  README.md
+HireConnect
+│
+├── client
+│   ├── src
+│   ├── public
+│   └── package.json
+│
+├── server
+│   ├── prisma
+│   ├── src
+│   ├── uploads
+│   └── package.json
+│
+├── docs
+│
+├── README.md
+└── LICENSE
 ```
 
-## Getting Started (local dev)
+---
 
-> Requires Node.js >= 20. The dev server uses SQLite so it runs with zero external services.
+# 🚀 Installation
+
+## Clone Repository
 
 ```bash
-# 1. Install dependencies
-cd server && npm install
-cd ../client && npm install
+git clone https://github.com/naimuropu-cell/HireConnect.git
+cd HireConnect
+```
 
-# 2. Configure server env
-cd ../server
+---
+
+# ⚙ Backend Setup
+
+```bash
+cd server
+
+npm install
+
 copy .env.example .env
 
-# 3. Create the DB schema and seed demo data
 npx prisma migrate dev
+
 npm run seed
 
-# 4. Start the API (http://localhost:5000)
-npm run dev
-
-# 5. In another terminal, start the client (http://localhost:5173)
-cd ../client
-npm install
 npm run dev
 ```
 
-### Demo accounts (from seed)
+Backend runs on
 
-| Role    | Email                  | Password  |
-|---------|------------------------|-----------|
-| Admin   | admin@hireconnect.com  | Admin@123 |
-| Seeker  | seeker@hireconnect.com | Seeker@123|
-| Employer| employer@hireconnect.com|Employer@123|
+```
+http://localhost:5000
+```
 
-## Switching to PostgreSQL
+---
 
-1. Change `provider` to `"postgresql"` in `server/prisma/schema.prisma`.
-2. Set `DATABASE_URL` to your Postgres (e.g. Supabase) connection string in `server/.env`.
-3. `npx prisma migrate dev` and `npm run seed`.
+# 💻 Frontend Setup
 
-## Scripts
+```bash
+cd client
 
-| Where  | Script        | Purpose                          |
-|--------|---------------|----------------------------------|
-| server | `npm run dev` | Dev server with hot reload (tsx) |
-| server | `npm run build`| Compile TypeScript to `dist/`   |
-| server | `npm run seed`| Seed demo data                  |
-| server | `npm test`    | Run API tests                   |
-| client | `npm run dev` | Vite dev server                 |
-| client | `npm run build`| Production build                |
+npm install
 
-## Docs
+npm run dev
+```
 
-See `docs/` for the API reference and architecture notes.
+Frontend runs on
 
-## License
+```
+http://localhost:5173
+```
 
-MIT — see [LICENSE](LICENSE).
+---
+
+# 🔑 Demo Accounts
+
+## 👑 Admin
+
+| Email | Password |
+|--------|----------|
+| admin@hireconnect.com | Admin@123 |
+
+---
+
+## 🏢 Employer
+
+| Email | Password |
+|--------|----------|
+| employer@hireconnect.com | Employer@123 |
+
+---
+
+## 👤 Job Seeker
+
+| Email | Password |
+|--------|----------|
+| seeker@hireconnect.com | Seeker@123 |
+
+---
+
+# 📸 Screenshots
+
+> Add screenshots here
+
+```
+Home Page
+
+Login
+
+Dashboard
+
+Job Listings
+
+Employer Dashboard
+
+Admin Dashboard
+```
+
+---
+
+# 🔄 Application Workflow
+
+```
+User Registration
+        │
+        ▼
+Login
+        │
+        ▼
+Select Role
+        │
+ ┌──────┴────────┐
+ │               │
+ ▼               ▼
+Employer      Job Seeker
+ │               │
+ ▼               ▼
+Post Job      Search Job
+ │               │
+ ▼               ▼
+Receive       Apply Job
+Applications      │
+ │               ▼
+ ▼          Track Status
+Shortlist
+ │
+ ▼
+Hire Candidate
+```
+
+---
+
+# 🔒 Security Features
+
+- JWT Authentication
+- Password Hashing (Bcrypt)
+- Protected Routes
+- Role-Based Authorization
+- Input Validation
+- Secure File Upload
+- Environment Variables
+- API Validation
+
+---
+
+# 📈 Future Improvements
+
+- AI Resume Parser
+- Resume Scoring
+- Candidate Recommendation
+- Company Reviews
+- Google Login
+- LinkedIn Login
+- Two-Factor Authentication
+- Interview Scheduling
+- Real-Time Chat
+- AI Career Assistant
+
+---
+
+# 🧪 QA Testing Scope
+
+The platform is suitable for Manual & Automation Testing.
+
+Modules:
+
+- Authentication
+- User Registration
+- Login
+- Forgot Password
+- Profile Management
+- Resume Upload
+- Job Search
+- Job Details
+- Apply Job
+- Employer Dashboard
+- Admin Dashboard
+- Notifications
+- CRUD Operations
+- API Testing
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+
+2. Create a feature branch
+
+```bash
+git checkout -b feature/new-feature
+```
+
+3. Commit changes
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push changes
+
+```bash
+git push origin feature/new-feature
+```
+
+5. Create a Pull Request
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+**Md. Naimur Rahman**
+
+GitHub: https://github.com/naimuropu-cell
+
+---
+
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
