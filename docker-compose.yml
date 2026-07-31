@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: hireconnect-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: hireconnect
+      POSTGRES_PASSWORD: hireconnect
+      POSTGRES_DB: hireconnect
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  server:
+    build:
+      context: ./server
+    container_name: hireconnect-server
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://hireconnect:hireconnect@db:5432/hireconnect
+      JWT_SECRET: change-me
+      JWT_REFRESH_SECRET: change-me-too
+      PORT: 5000
+    ports:
+      - "5000:5000"
+
+volumes:
+  pgdata:
