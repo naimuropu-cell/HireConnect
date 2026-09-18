@@ -1,6 +1,6 @@
 # 💼 HireConnect - AI Based Job Matching Platform
 
-> A modern AI-inspired recruitment platform that connects job seekers and employers through an intelligent job matching system. Built with React, TypeScript, Express.js, PostgreSQL, and Prisma.
+> A modern AI-inspired recruitment platform that connects job seekers and employers through an intelligent job matching system. Built with React, TypeScript, Express.js, PostgreSQL, and Prisma .
 
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript)
