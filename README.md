@@ -355,7 +355,7 @@ This project is licensed under the MIT License.
 
 # 👨‍💻 Author
 
-**Md. Naimur Rahman**
+**Md. Naimur Rahman Apu**
 
 GitHub: https://github.com/naimuropu-cell
 
